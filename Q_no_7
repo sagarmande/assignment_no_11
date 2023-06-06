@@ -1,0 +1,35 @@
+def searchRange(nums, target):
+    start = -1
+    end = -1
+
+    # Find the leftmost occurrence of the target value
+    left = 0
+    right = len(nums) - 1
+
+    while left <= right:
+        mid = left + (right - left) // 2
+
+        if nums[mid] == target:
+            start = mid
+            right = mid - 1
+        elif nums[mid] > target:
+            right = mid - 1
+        else:
+            left = mid + 1
+
+    # Find the rightmost occurrence of the target value
+    left = start
+    right = len(nums) - 1
+
+    while left <= right:
+        mid = left + (right - left) // 2
+
+        if nums[mid] == target:
+            end = mid
+            left = mid + 1
+        elif nums[mid] > target:
+            right = mid - 1
+        else:
+            left = mid + 1
+
+    return [start, end]
