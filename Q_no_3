@@ -1,0 +1,13 @@
+def missingNumber(nums):
+    n = len(nums)
+    totalSum = n * (n + 1) // 2  # Sum of numbers from 0 to n using the formula n * (n + 1) // 2
+    arraySum = sum(nums)
+    return totalSum - arraySum
+
+
+
+nums = [3, 0, 1]
+print(missingNumber(nums))  # Output: 2
+
+nums = [0, 1]
+print(missingNumber(nums))  # Output: 2
