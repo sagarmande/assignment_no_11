@@ -1,0 +1,15 @@
+The given code appears to be implementing the square root function using the binary search algorithm. It assumes that the input `x` is a non-negative integer. 
+
+The code first checks if `x` is equal to 0 and returns 0 in that case. If `x` is non-zero, it initializes two variables `left` and `right` to 1 and `x`, respectively. 
+
+The code then enters a while loop, which continues until `left` is less than or equal to `right`. Inside the loop, it calculates the midpoint `mid` as the integer division of the sum of `left` and `right` by 2.
+
+The code then checks if `mid * mid` is less than or equal to `x` and if `(mid + 1) * (mid + 1)` is greater than `x`. If this condition is true, it means that `mid` is the integer square root of `x`, so it returns `mid`.
+
+If the condition is not true, the code checks if `mid * mid` is greater than `x`. If this is the case, it means that the square root of `x` lies in the left half of the search space. Therefore, it updates the `right` variable to `mid - 1`.
+
+If neither of the above conditions is true, it means that the square root of `x` lies in the right half of the search space. Therefore, it updates the `left` variable to `mid + 1`.
+
+By iteratively narrowing down the search space in this manner, the code eventually finds the integer square root of `x` and returns it.
+
+Overall, the code implements the square root function using a binary search algorithm, providing a time complexity of O(log x) since the search space is halved at each step.
